@@ -38,13 +38,13 @@ A beautiful, cross-platform status line for [Claude Code](https://claude.ai/code
 ### One command (recommended)
 
 ```
-npx -y github:YOUR_GITHUB_USERNAME/claude-code-statusline
+npx -y github:JavoxirJava/claude-code-statusline
 ```
 
 ### Clone and run
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/claude-code-statusline
+git clone https://github.com/JavoxirJava/claude-code-statusline
 cd claude-code-statusline
 node install.mjs
 ```
