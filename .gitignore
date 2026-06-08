@@ -6,3 +6,5 @@ node_modules/
 .vscode/
 CLAUDE.md
 claude-code-statusline-PROMPT.md
+./CLAUDE.md
+./claude-code-statusline-PROMPT.md

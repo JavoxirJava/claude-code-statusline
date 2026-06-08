@@ -5,8 +5,8 @@
 A beautiful, cross-platform status line for [Claude Code](https://claude.ai/code) that shows your model, context usage, session cost, git branch, and rate limits — right in the terminal.
 
 ```
-◆ Opus   📁 tashkent-construction   🌿 main +2 ~1
-███████░░░ 68%  ·  💰 $0.42  ·  ⏱ 4m 12s  ·  5h 23% · 7d 41%
+◆ Sonnet   📁 my-project   🌿 main +2 ~1
+███████░░░ 68%  ·  💰 $1.87  ·  ⏱ 4m 12s  ·  ⏳ 5h ██████░░░░ 55%  ·  📅 7d ████████░░ 82%
 ```
 
 ![Claude Code Status Line preview](example.png)
@@ -88,8 +88,8 @@ node install.mjs --project
 | `███████░░░ 68%` | Context window used (green/yellow/red) |
 | `💰 $0.42` | Estimated session cost |
 | `⏱ 4m 12s` | Time since session started |
-| `5h 23%` | 5-hour rate limit used (Pro/Max only) |
-| `7d 41%` | 7-day rate limit used (Pro/Max only) |
+| `⏳ 5h ██████░░░░ 55%` | 5-hour rate limit used (Pro/Max only) |
+| `📅 7d ████████░░ 82%` | 7-day rate limit used (Pro/Max only) |
 
 Color thresholds apply to the context bar and rate-limit percentages:
 - **Green** — under 70 %

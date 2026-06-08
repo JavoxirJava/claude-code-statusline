@@ -5,8 +5,8 @@
 [Claude Code](https://claude.ai/code) uchun chiroyli, ko'p platformali status qatori — model nomi, kontekst foizi, sessiya narxi, git holati va rate limitlarni to'g'ridan-to'g'ri terminalda ko'rsatadi.
 
 ```
-◆ Opus   📁 toshkent-qurilish   🌿 main +2 ~1
-███████░░░ 68%  ·  💰 $0.42  ·  ⏱ 4m 12s  ·  5h 23% · 7d 41%
+◆ Sonnet   📁 loyiham   🌿 main +2 ~1
+███████░░░ 68%  ·  💰 $1.87  ·  ⏱ 4m 12s  ·  ⏳ 5h ██████░░░░ 55%  ·  📅 7d ████████░░ 82%
 ```
 
 ![Claude Code Status Line ko'rinishi](example.png)
@@ -88,8 +88,8 @@ node install.mjs --project
 | `███████░░░ 68%` | Kontekst oynasi foydlanishi (yashil/sariq/qizil) |
 | `💰 $0.42` | Taxminiy sessiya narxi |
 | `⏱ 4m 12s` | Sessiya boshlanganidan o'tgan vaqt |
-| `5h 23%` | 5 soatlik rate limit foydalanishi (faqat Pro/Max) |
-| `7d 41%` | 7 kunlik rate limit foydalanishi (faqat Pro/Max) |
+| `⏳ 5h ██████░░░░ 55%` | 5 soatlik rate limit foydalanishi (faqat Pro/Max) |
+| `📅 7d ████████░░ 82%` | 7 kunlik rate limit foydalanishi (faqat Pro/Max) |
 
 Rang bo'saglalari kontekst paneli va rate limit foizlariga qo'llaniladi:
 - **Yashil** — 70% dan past
