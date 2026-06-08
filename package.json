@@ -1,0 +1,15 @@
+{
+  "name": "claude-code-statusline",
+  "version": "1.0.0",
+  "description": "A beautiful, cross-platform status line for Claude Code — shows model, context %, cost, git status, and rate limits.",
+  "type": "commonjs",
+  "bin": { "claude-code-statusline": "install.mjs" },
+  "scripts": {
+    "install-statusline": "node install.mjs",
+    "uninstall-statusline": "node uninstall.mjs",
+    "preview": "node test.mjs"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "keywords": ["claude", "claude-code", "statusline", "cli", "terminal"]
+}
