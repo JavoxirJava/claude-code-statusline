@@ -38,13 +38,13 @@
 ### Bitta buyruq bilan (tavsiya etiladi)
 
 ```
-npx -y github:YOUR_GITHUB_USERNAME/claude-code-statusline
+npx -y github:JavoxirJava/claude-code-statusline
 ```
 
 ### Clone qilib o'rnatish
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/claude-code-statusline
+git clone https://github.com/JavoxirJava/claude-code-statusline
 cd claude-code-statusline
 node install.mjs
 ```
