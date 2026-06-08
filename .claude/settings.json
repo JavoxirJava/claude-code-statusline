@@ -1,0 +1,7 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "node \"D:/scripts/statusline/.claude/statusline.js\"",
+    "padding": 0
+  }
+}
