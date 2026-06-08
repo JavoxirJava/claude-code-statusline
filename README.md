@@ -9,7 +9,7 @@ A beautiful, cross-platform status line for [Claude Code](https://claude.ai/code
 ███████░░░ 68%  ·  💰 $0.42  ·  ⏱ 4m 12s  ·  5h 23% · 7d 41%
 ```
 
-> Add a real screenshot here (docs/screenshot.png).
+![Claude Code Status Line preview](example.png)
 
 ---
 

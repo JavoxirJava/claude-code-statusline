@@ -9,7 +9,7 @@
 ███████░░░ 68%  ·  💰 $0.42  ·  ⏱ 4m 12s  ·  5h 23% · 7d 41%
 ```
 
-> Bu yerga haqiqiy screenshot qo'shing (docs/screenshot.png).
+![Claude Code Status Line ko'rinishi](example.png)
 
 ---
 
