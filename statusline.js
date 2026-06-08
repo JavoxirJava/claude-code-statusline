@@ -112,8 +112,14 @@ function render(data) {
   parts.push(`${paint(thresh(pct), bar(pct))} ${paint(thresh(pct), pct + '%')}`);
   if (!HIDE.has('cost')) parts.push(`${icon('💰', '', '$')} ${paint('33', '$' + cost.toFixed(2))}`);
   if (!HIDE.has('duration')) parts.push(`${paint('2', icon('⏱', '', ''))} ${durStr}`.trim());
-  if (!HIDE.has('ratelimit') && fiveH != null) parts.push(`5h ${paint(thresh(Math.round(fiveH)), Math.round(fiveH) + '%')}`);
-  if (!HIDE.has('ratelimit') && week != null) parts.push(`7d ${paint(thresh(Math.round(week)), Math.round(week) + '%')}`);
+  if (!HIDE.has('ratelimit') && fiveH != null) {
+    const p = Math.round(fiveH);
+    parts.push(`${icon('⏳', '', '5h')} 5h ${paint(thresh(p), bar(p))} ${paint(thresh(p), p + '%')}`);
+  }
+  if (!HIDE.has('ratelimit') && week != null) {
+    const p = Math.round(week);
+    parts.push(`${icon('📅', '', '7d')} 7d ${paint(thresh(p), bar(p))} ${paint(thresh(p), p + '%')}`);
+  }
   const line2 = parts.join(sep);
 
   // ----- single vs double line -----

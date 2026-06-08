@@ -5,15 +5,15 @@ import { fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const mock = {
-  model: { display_name: 'Opus' },
+  model: { display_name: 'Sonnet' },
   workspace: { current_dir: process.cwd() },
   cwd: process.cwd(),
   session_id: 'test-session-123',
   context_window: { used_percentage: 68 },
-  cost: { total_cost_usd: 0.42, total_duration_ms: 252000 },
+  cost: { total_cost_usd: 1.87, total_duration_ms: 252000 },
   rate_limits: {
-    five_hour: { used_percentage: 23 },
-    seven_day: { used_percentage: 41 },
+    five_hour: { used_percentage: 55 },
+    seven_day: { used_percentage: 82 },
   },
 };
 
