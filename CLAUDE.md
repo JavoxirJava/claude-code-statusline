@@ -62,6 +62,8 @@ install.ps1     # PowerShell wrapper: same idea
 | `cost.total_duration_ms` | wall-clock ms since session start |
 | `rate_limits.five_hour.used_percentage` | only present for Pro/Max after first response |
 | `rate_limits.seven_day.used_percentage` | same caveat |
+| `rate_limits.five_hour.resets_at` | unix seconds; rendered as local `HH:MM` (`+Nd` suffix if not today) |
+| `rate_limits.seven_day.resets_at` | same |
 
 ## Environment variable overrides (all optional)
 
@@ -70,7 +72,7 @@ install.ps1     # PowerShell wrapper: same idea
 | `NO_COLOR` | disable all ANSI |
 | `CCSL_NO_EMOJI=1` | replace emoji with plain text |
 | `CCSL_NERD_FONTS=1` | use Nerd Font glyphs |
-| `CCSL_HIDE=cost,duration,git,ratelimit` | comma-list of segments to hide |
+| `CCSL_HIDE=cost,duration,git,ratelimit,resettime` | comma-list of segments to hide (`resettime` hides just the `→ HH:MM` reset time, keeping the bar/%) |
 | `CCSL_BAR_WIDTH=10` | context bar width (4–40) |
 | `CCSL_LINES=1\|2` | force single or double line |
 

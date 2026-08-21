@@ -72,6 +72,19 @@ function bar(pct) {
 }
 const thresh = (p) => (p >= 90 ? '31' : p >= 70 ? '33' : '32');
 
+function fmtResetAt(unixSeconds) {
+  if (!unixSeconds) return '';
+  const d = new Date(unixSeconds * 1000);
+  if (isNaN(d.getTime())) return '';
+  const now = new Date();
+  const hh = String(d.getHours()).padStart(2, '0');
+  const mm = String(d.getMinutes()).padStart(2, '0');
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const that = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  const dayDiff = Math.round((that - today) / 86400000);
+  return dayDiff > 0 ? `${hh}:${mm} +${dayDiff}d` : `${hh}:${mm}`;
+}
+
 function render(data) {
   const model = (data.model && data.model.display_name) || 'Claude';
   const cwd = (data.workspace && data.workspace.current_dir) || data.cwd || '';
@@ -90,6 +103,8 @@ function render(data) {
   const rl = data.rate_limits || {};
   const fiveH = rl.five_hour && rl.five_hour.used_percentage != null ? rl.five_hour.used_percentage : null;
   const week = rl.seven_day && rl.seven_day.used_percentage != null ? rl.seven_day.used_percentage : null;
+  const fiveHResetsAt = rl.five_hour && rl.five_hour.resets_at != null ? rl.five_hour.resets_at : null;
+  const weekResetsAt = rl.seven_day && rl.seven_day.resets_at != null ? rl.seven_day.resets_at : null;
 
   // ----- line 1 -----
   let line1 = `${paint('36', icon('◆', '', '*'))} ${paint('1;36', model)}`;
@@ -114,11 +129,15 @@ function render(data) {
   if (!HIDE.has('duration')) parts.push(`${paint('2', icon('⏱', '', ''))} ${durStr}`.trim());
   if (!HIDE.has('ratelimit') && fiveH != null) {
     const p = Math.round(fiveH);
-    parts.push(`${icon('⏳', '', '5h')} 5h ${paint(thresh(p), bar(p))} ${paint(thresh(p), p + '%')}`);
+    const reset = !HIDE.has('resettime') && fmtResetAt(fiveHResetsAt);
+    const resetStr = reset ? ' ' + paint('2', `→ ${reset}`) : '';
+    parts.push(`${icon('⏳', '', '5h')} 5h ${paint(thresh(p), bar(p))} ${paint(thresh(p), p + '%')}${resetStr}`);
   }
   if (!HIDE.has('ratelimit') && week != null) {
     const p = Math.round(week);
-    parts.push(`${icon('📅', '', '7d')} 7d ${paint(thresh(p), bar(p))} ${paint(thresh(p), p + '%')}`);
+    const reset = !HIDE.has('resettime') && fmtResetAt(weekResetsAt);
+    const resetStr = reset ? ' ' + paint('2', `→ ${reset}`) : '';
+    parts.push(`${icon('📅', '', '7d')} 7d ${paint(thresh(p), bar(p))} ${paint(thresh(p), p + '%')}${resetStr}`);
   }
   const line2 = parts.join(sep);
 

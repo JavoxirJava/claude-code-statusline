@@ -12,8 +12,8 @@ const mock = {
   context_window: { used_percentage: 68 },
   cost: { total_cost_usd: 1.87, total_duration_ms: 252000 },
   rate_limits: {
-    five_hour: { used_percentage: 55 },
-    seven_day: { used_percentage: 82 },
+    five_hour: { used_percentage: 55, resets_at: Math.floor(Date.now() / 1000) + 2 * 3600 + 15 * 60 },
+    seven_day: { used_percentage: 82, resets_at: Math.floor(Date.now() / 1000) + 2 * 86400 + 3 * 3600 },
   },
 };
 
